@@ -35,7 +35,6 @@ export const metadata: Metadata = {
   authors: [{ name: "Haven Stay" }],
   creator: "Haven Stay",
   publisher: "Haven Stay",
-  metadataBase: new URL("https://havenstay.co.kr"),
   alternates: {
     canonical: "/",
   },
@@ -44,7 +43,6 @@ export const metadata: Metadata = {
     description: "자연 속에서 찾는 진정한 휴식. Haven Stay에서 특별한 경험을 만나보세요.",
     type: "website",
     locale: "ko_KR",
-    url: "https://havenstay.co.kr",
     siteName: "Haven Stay",
     images: [
       {
@@ -73,10 +71,7 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  verification: {
-    google: "google-site-verification-code",
-    yandex: "yandex-verification-code",
-  },
+
 };
 
 export default function RootLayout({
