@@ -1,24 +1,63 @@
 export const metadata = {
-  title: "Haven Stay - 조용한 하루가 필요할 때",
-  description: "자연 속에서 찾는 진정한 휴식. Haven Stay에서 특별한 경험을 만나보세요.",
+  title: "Haven Stay - 테스트",
+  description: "테스트 페이지",
 }
 
 export default function Home() {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-cream-50">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold text-stone-800 mb-4">Haven Stay</h1>
-        <p className="text-lg text-stone-600 mb-8">조용한 하루가 필요할 때</p>
-        <div className="space-x-4">
+    <div style={{
+      minHeight: '100vh',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      backgroundColor: '#f5f5f5',
+      fontFamily: 'system-ui, sans-serif'
+    }}>
+      <div style={{
+        textAlign: 'center',
+        padding: '2rem',
+        backgroundColor: 'white',
+        borderRadius: '8px',
+        boxShadow: '0 2px 10px rgba(0,0,0,0.1)'
+      }}>
+        <h1 style={{
+          fontSize: '2.5rem',
+          color: '#333',
+          marginBottom: '1rem'
+        }}>
+          ✅ Haven Stay
+        </h1>
+        <p style={{
+          fontSize: '1.2rem',
+          color: '#666',
+          marginBottom: '2rem'
+        }}>
+          사이트가 정상적으로 작동합니다!
+        </p>
+        <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center' }}>
           <a
             href="/rooms"
-            className="inline-block px-6 py-3 bg-sage-500 text-white rounded-lg hover:bg-sage-600 transition-colors"
+            style={{
+              padding: '0.75rem 1.5rem',
+              backgroundColor: '#4ade80',
+              color: 'white',
+              textDecoration: 'none',
+              borderRadius: '6px',
+              fontWeight: '500'
+            }}
           >
             객실 보기
           </a>
           <a
             href="/about"
-            className="inline-block px-6 py-3 border border-stone-300 text-stone-700 rounded-lg hover:bg-stone-50 transition-colors"
+            style={{
+              padding: '0.75rem 1.5rem',
+              backgroundColor: '#e5e7eb',
+              color: '#374151',
+              textDecoration: 'none',
+              borderRadius: '6px',
+              fontWeight: '500'
+            }}
           >
             소개
           </a>
