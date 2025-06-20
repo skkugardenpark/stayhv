@@ -25,7 +25,7 @@ export default function Home() {
             {/* Main Headline */}
             <div className="space-y-4">
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-none">
-                <span className="block">MORE THAN</span>
+                <span className="block text-white">MORE THAN</span>
                 <span className="block bg-gradient-to-r from-sage-300 via-sand-200 to-nude-300 bg-clip-text text-transparent">
                   STAY
                 </span>
