@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { motion } from "framer-motion"
+
 import { ChevronDownIcon } from "@heroicons/react/24/outline"
 import { Container } from "@/components/layout/container"
 import Image from "next/image"

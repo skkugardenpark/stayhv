@@ -1,7 +1,6 @@
 "use client"
 
 import { useState } from "react"
-import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
@@ -47,7 +46,6 @@ export default function BookingPage() {
   }
 
   const handleSubmit = () => {
-    // 실제 예약 처리 로직
     alert("예약이 완료되었습니다! 확인 이메일을 발송해드렸습니다.")
   }
 
@@ -55,19 +53,14 @@ export default function BookingPage() {
     <div className="min-h-screen bg-sand-50">
       <Container>
         <div className="py-24">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-12"
-          >
+          <div className="text-center mb-12 animate-fade-in-up">
             <h1 className="font-serif text-4xl md:text-5xl font-semibold text-gray-700 mb-4">
               예약하기
             </h1>
             <p className="text-lg text-gray-600">
               편안한 휴식을 위한 완벽한 공간을 예약해보세요
             </p>
-          </motion.div>
+          </div>
 
           {/* Progress Steps */}
           <div className="flex justify-center mb-12">
@@ -75,17 +68,17 @@ export default function BookingPage() {
               {[1, 2, 3].map((stepNum) => (
                 <div key={stepNum} className="flex items-center">
                   <div
-                    className={`w-10 h-10 rounded-full flex items-center justify-center text-sm font-medium ${
+                    className={`w-10 h-10 rounded-full flex items-center justify-center text-sm font-medium transition-colors duration-300 ${
                       step >= stepNum
-                        ? "bg-olive-400 text-white"
+                        ? "bg-sage-500 text-white"
                         : "bg-gray-200 text-gray-600"
                     }`}
                   >
                     {stepNum}
                   </div>
                   <span
-                    className={`ml-2 text-sm ${
-                      step >= stepNum ? "text-olive-600" : "text-gray-500"
+                    className={`ml-2 text-sm transition-colors duration-300 ${
+                      step >= stepNum ? "text-sage-600" : "text-gray-500"
                     }`}
                   >
                     {stepNum === 1 && "날짜 선택"}
@@ -105,11 +98,7 @@ export default function BookingPage() {
             <div className="lg:col-span-2">
               {/* Step 1: Date Selection */}
               {step === 1 && (
-                <motion.div
-                  initial={{ opacity: 0, x: -30 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.6 }}
-                >
+                <div className="animate-slide-in-left">
                   <Card>
                     <CardHeader>
                       <CardTitle>날짜 및 인원 선택</CardTitle>
@@ -142,7 +131,7 @@ export default function BookingPage() {
                           인원
                         </label>
                         <select
-                          className="w-full p-2 border border-sand-200 rounded-md"
+                          className="w-full p-2 border border-sand-200 rounded-md focus:ring-2 focus:ring-sage-500 focus:border-sage-500 transition-colors"
                           value={bookingData.guests}
                           onChange={(e) => handleInputChange("guests", parseInt(e.target.value))}
                         >
@@ -160,16 +149,12 @@ export default function BookingPage() {
                       </Button>
                     </CardContent>
                   </Card>
-                </motion.div>
+                </div>
               )}
 
               {/* Step 2: Room Selection */}
               {step === 2 && (
-                <motion.div
-                  initial={{ opacity: 0, x: -30 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.6 }}
-                >
+                <div className="animate-slide-in-left">
                   <Card>
                     <CardHeader>
                       <CardTitle>객실 선택</CardTitle>
@@ -179,9 +164,9 @@ export default function BookingPage() {
                         {rooms.map((room) => (
                           <div
                             key={room.id}
-                            className={`p-4 border rounded-lg cursor-pointer transition-colors ${
+                            className={`p-4 border rounded-lg cursor-pointer transition-all duration-300 hover:shadow-md ${
                               selectedRoom?.id === room.id
-                                ? "border-olive-400 bg-olive-50"
+                                ? "border-sage-500 bg-sage-50 shadow-md"
                                 : "border-sand-200 hover:border-sand-300"
                             }`}
                             onClick={() => setSelectedRoom(room)}
@@ -194,7 +179,7 @@ export default function BookingPage() {
                                 <p className="text-sm text-gray-500">{room.type}</p>
                               </div>
                               <div className="text-right">
-                                <p className="font-semibold text-olive-600">
+                                <p className="font-semibold text-sage-600">
                                   {room.price.toLocaleString()}원
                                 </p>
                                 <p className="text-sm text-gray-500">/ 박</p>
@@ -217,16 +202,12 @@ export default function BookingPage() {
                       </div>
                     </CardContent>
                   </Card>
-                </motion.div>
+                </div>
               )}
 
               {/* Step 3: Guest Information */}
               {step === 3 && (
-                <motion.div
-                  initial={{ opacity: 0, x: -30 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.6 }}
-                >
+                <div className="animate-slide-in-left">
                   <Card>
                     <CardHeader>
                       <CardTitle>예약자 정보</CardTitle>
@@ -268,7 +249,7 @@ export default function BookingPage() {
                           특별 요청사항
                         </label>
                         <textarea
-                          className="w-full p-3 border border-sand-200 rounded-md h-24"
+                          className="w-full p-3 border border-sand-200 rounded-md h-24 focus:ring-2 focus:ring-sage-500 focus:border-sage-500 transition-colors"
                           value={bookingData.requests}
                           onChange={(e) => handleInputChange("requests", e.target.value)}
                           placeholder="특별히 요청하실 사항이 있으시면 입력해주세요"
@@ -288,17 +269,13 @@ export default function BookingPage() {
                       </div>
                     </CardContent>
                   </Card>
-                </motion.div>
+                </div>
               )}
             </div>
 
             {/* Summary Sidebar */}
             <div className="lg:col-span-1">
-              <motion.div
-                initial={{ opacity: 0, x: 30 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6 }}
-              >
+              <div className="animate-slide-in-right">
                 <Card className="sticky top-24">
                   <CardHeader>
                     <CardTitle>예약 요약</CardTitle>
@@ -331,7 +308,7 @@ export default function BookingPage() {
                       <div className="border-t border-sand-200 pt-4">
                         <div className="flex justify-between items-center">
                           <span className="font-semibold text-lg">총 요금</span>
-                          <span className="font-semibold text-lg text-olive-600">
+                          <span className="font-semibold text-lg text-sage-600">
                             {getTotalPrice().toLocaleString()}원
                           </span>
                         </div>
@@ -339,7 +316,7 @@ export default function BookingPage() {
                     )}
                   </CardContent>
                 </Card>
-              </motion.div>
+              </div>
             </div>
           </div>
         </div>
