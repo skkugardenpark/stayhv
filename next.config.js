@@ -10,6 +10,16 @@ const nextConfig = {
       },
     ],
   },
+  trailingSlash: false,
+  async redirects() {
+    return []
+  },
+  async rewrites() {
+    return []
+  },
+  poweredByHeader: false,
+  compress: true,
+  reactStrictMode: true,
 };
 
 module.exports = nextConfig;
