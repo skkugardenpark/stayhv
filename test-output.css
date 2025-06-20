@@ -2532,6 +2532,18 @@ video {
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
 
+.from-nude-50 {
+  --tw-gradient-from: #fdf9f7 var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(253 249 247 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.from-sand-50 {
+  --tw-gradient-from: #faf8f5 var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(250 248 245 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
 .via-forest-200 {
   --tw-gradient-to: rgb(188 228 202 / 0)  var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), #bce4ca var(--tw-gradient-via-position), var(--tw-gradient-to);
@@ -2811,6 +2823,14 @@ video {
   --tw-gradient-to: #eef2ea var(--tw-gradient-to-position);
 }
 
+.to-nude-100 {
+  --tw-gradient-to: #faf2ee var(--tw-gradient-to-position);
+}
+
+.to-sand-100 {
+  --tw-gradient-to: #f4f0ea var(--tw-gradient-to-position);
+}
+
 .bg-300\% {
   background-size: 300% 300%;
 }
@@ -2963,6 +2983,11 @@ video {
 .py-20 {
   padding-top: 5rem;
   padding-bottom: 5rem;
+}
+
+.py-32 {
+  padding-top: 8rem;
+  padding-bottom: 8rem;
 }
 
 .pb-2 {
